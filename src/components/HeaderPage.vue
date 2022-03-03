@@ -1,15 +1,19 @@
 <template>
  <header>
-   <h1 class="text-danger">Test Bootstrap</h1>
+   <ThumbHeader />
  </header>
 </template>
 
 <script>
-export default {
-  name: 'HeaderPage',
-  props: {
+  import ThumbHeader from "./header/ThumbHeader.vue"
+  export default {
+    name: 'HeaderPage',
+    props: {
+    },
+    components: {
+      ThumbHeader,
+    }
   }
-}
 </script>
 
 <style scoped lang="scss">
