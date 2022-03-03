@@ -1,7 +1,26 @@
 
 <template>
-  <section class="meet-doctors text-center mb-5">
-    <CardDoctor />
+  <section class="meet-doctors">
+    <div class="container text-center pb-5">
+      <div class="content-section">
+        <img :src="require ('../../assets/images/icon-5.png')" alt="Icon">
+        <h2 class="text-uppercase">Meet our doctors</h2>
+        <div class="line"></div>
+        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem asccusantium dolermque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis er quasi architecto beatae</p>
+      </div>
+      <div class="doctors d-flex justify-content-around">
+        <CardDoctor 
+          v-for="(doctor,index) in doctors" :key="index"
+          :img="doctor.img"
+          :name="doctor.name"
+          :job="doctor.job"
+          :description="doctor.description"
+          :firstSocial="doctor.firstSocial"
+          :secondSocial="doctor.secondSocial"
+          :thirdSocial="doctor.thirdSocial"
+        />
+      </div>
+    </div>
   </section>
 </template>
 
@@ -13,24 +32,58 @@
       return{
         doctors:[
           {
-            img: "icon-1.png",
-            title: "Same day appointments",
-            paragraph: "Sed ut perspiciatis unde omnis iste natus error sit voluptam accusantim"
+            img: "doctor-1.jpg",
+            name: "Jon Snow",
+            job: "Anesthesiologist",
+            description: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditis praesentium voluptatum deleniti atque",
+            firstSocial: {
+              nameSocial: "facebook",
+              urlSocial: "#"
+            },
+            secondSocial: {
+              nameSocial: "twitter",
+              urlSocial: "#"
+            },
+            thirdSocial: {
+              nameSocial: "instagram",
+              urlSocial: "#"
+            }
           },
           {
-            img: "icon-2.png",
-            title: "World class facilities",
-            paragraph: "Sed ut perspiciatis unde omnis iste natus error sit voluptam accusantim"
+            img: "doctor-2.jpg",
+            name: "Tony Stark",
+            job: "Cardiologist",
+            description: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditis praesentium voluptatum deleniti atque",
+            firstSocial: {
+              nameSocial: "facebook",
+              urlSocial: "#"
+            },
+            secondSocial: {
+              nameSocial: "twitter",
+              urlSocial: "#"
+            },
+            thirdSocial: {
+              nameSocial: "instagram",
+              urlSocial: "#"
+            }
           },
           {
-            img: "icon-3.png",
-            title: "Expert doctors",
-            paragraph: "Sed ut perspiciatis unde omnis iste natus error sit voluptam accusantim"
-          },
-          {
-            img: "icon-4.png",
-            title: "Complementary Therapies",
-            paragraph: "Sed ut perspiciatis unde omnis iste natus error sit voluptam accusantim"
+            img: "doctor-3.jpg",
+            name: "Anna Smith",
+            job: "Nuser Practitioner",
+            description: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditis praesentium voluptatum deleniti atque",
+            firstSocial: {
+              nameSocial: "facebook",
+              urlSocial: "#"
+            },
+            secondSocial: {
+              nameSocial: "twitter",
+              urlSocial: "#"
+            },
+            thirdSocial: {
+              nameSocial: "instagram",
+              urlSocial: "#"
+            }
           }
         ]
       }
@@ -38,23 +91,39 @@
     props: {
     },
     components:{
-      CardWelcome
+      CardDoctor
     }
   }
 </script>
 
 <style scoped lang="scss">
-  .title-welcome{
-    width: 70%;
-    margin-top: 80px;
-    h3{
-      font-weight: 200;
-      font-size: 35px;
-    }
-    p{
-      margin: 20px 0 50px 0;
-      line-height: 30px;
-      font-weight: 300;
+  @import "../../assets/style/line.scss";
+  .meet-doctors{
+    background-color: #f1efef;
+    .container{
+      width: 70%;
+      margin: auto;
+      .content-section{
+      width: 55%;
+      margin: auto;
+        h2{
+        font-size: 40px;
+        font-weight: 200;
+          &:after{
+            content: "";
+            width: 100px;
+            height: 5px;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: black;
+          }
+        }
+        p{
+          line-height: 30px;
+          margin-bottom: 50px;
+        }
+      }
     }
   }
 </style>

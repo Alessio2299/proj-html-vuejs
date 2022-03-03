@@ -1,9 +1,14 @@
 <template>
   <div class="card-doctor">
     <img :src="require (`../../assets/images/${img}`)" alt="icon">
-    <span class="text-uppercase my-3">{{name}}</span>
-    <span class="text-uppercase my-3">{{job}}</span>
-    <p>{{description}}</p>
+    <div class="info text-start p-4">
+      <span class="d-block text-uppercase mt-3">{{name}}</span>
+      <span class="d-block my-2">{{job}}</span>
+      <p class="mt-4">{{description}}</p>
+      <a :href="firstSocial.idSocial"><i :class="`${firstSocial.nameSocial} fab fa-${firstSocial.nameSocial}-square`"></i></a>
+      <a :href="secondSocial.idSocial"><i :class="`${secondSocial.nameSocial} fab fa-${secondSocial.nameSocial}-square`"></i></a>
+      <a :href="thirdSocial.idSocial"><i :class="`${thirdSocial.nameSocial} fab fa-${thirdSocial.nameSocial}-square`"></i></a>
+    </div>
   </div>
 </template>
 
@@ -15,22 +20,46 @@
       name: String,
       job: String,
       description: String,
-      facebook: String,
-      twitter: String,
-      instagram: String
+      firstSocial: Object,
+      secondSocial: Object,
+      thirdSocial: Object
     }
   }
 </script>
 
 <style scoped lang="scss">
-  .card-welcome{
-    h5{
+
+  .card-doctor{
+    width: 300px;
+    background-color: #fff;
+    span{
       font-weight: 300;
-      font-size: 17px;
+    }
+    img{
+      width: 100%;
     }
     p{
       line-height: 30px;
       font-size: 13px;
+    }
+    a{
+      font-size: 40px;
+      margin-right: 10px;
+    }
+    .facebook{
+      color: rgb(66, 88, 146)
+    }
+    .twitter{
+      color: rgb(108, 170, 232);
+    }
+    .instagram{
+      color: rgb(76, 113, 151);
+    }
+    .whatsapp{
+      color: #88acab;
+    }
+    .google-plus{
+      color: rgb(114, 14, 14);
     }
   }
 </style>
