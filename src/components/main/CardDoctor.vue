@@ -37,6 +37,11 @@
     }
     img{
       width: 100%;
+      &:hover{
+        transition: transform 1s;
+        transform: scale(1.05);
+        box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.37);
+      }
     }
     p{
       line-height: 30px;

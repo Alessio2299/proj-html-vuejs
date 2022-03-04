@@ -32,7 +32,7 @@
     }
     p{
       line-height: 30px;
-      margin-bottom: 50px;
+      margin-bottom: 30px;
     }
   }
 

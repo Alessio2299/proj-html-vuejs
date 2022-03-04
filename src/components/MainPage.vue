@@ -3,6 +3,7 @@
     <SectionWelcome />
     <SectionMeet />
     <SectionHealth />
+    <SectionTour />
   </main>
 </template>
 
@@ -10,6 +11,8 @@
   import SectionWelcome from "./main/SectionWelcome.vue"
   import SectionMeet from "./main/SectionMeet.vue"
   import SectionHealth from "./main/SectionHealth.vue"
+  import SectionTour from "./main/SectionTour.vue"
+
 
   
   export default {
@@ -19,7 +22,8 @@
     components:{
       SectionWelcome,
       SectionMeet,
-      SectionHealth
+      SectionHealth,
+      SectionTour
     }
   }
 </script>
