@@ -1,12 +1,14 @@
 <template>
   <section class="welcome text-center mb-5">
     <div class="container">
-      <div class="title-welcome mx-auto">
-        <h3>Welcome to Avada Health</h3>
-        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem asccusantium dolermque laudantium, totam rem aperiam, eaque ipsa quae ab illo</p>
-      </div>
+      <TitleSection
+        :img="false"
+        title="Welcome to Avada Health"
+        description="Sed ut perspiciatis unde omnis iste natus error sit voluptatem asccusantium dolermque laudantium, totam rem aperiam, eaque ipsa quae ab illo"
+        :line="false"
+      />
       <div class="container-cards d-flex gap-3">
-        <CardWelcome v-for="(card,index) in dataWelcome" :key="index"
+        <CardMain v-for="(card,index) in dataWelcome" :key="index"
           :img="card.img"
           :title="card.title"
           :description="card.paragraph"
@@ -17,9 +19,10 @@
 </template>
 
 <script>
-  import CardWelcome from "./CardWelcome.vue"
+  import CardMain from "./CardMain.vue"
+  import TitleSection from "./TitleSection.vue"
   export default {
-    name: 'WelcomeMain',
+    name: 'SectionWelcome',
     data(){
       return{
         dataWelcome:[
@@ -49,7 +52,8 @@
     props: {
     },
     components:{
-      CardWelcome
+      CardMain,
+      TitleSection
     }
   }
 </script>
@@ -58,18 +62,5 @@
   .container{
     width: 70%;
     margin: auto;
-    .title-welcome{
-    width: 70%;
-    padding-top: 80px;
-    h3{
-      font-weight: 200;
-      font-size: 35px;
-    }
-    p{
-      margin: 20px 0 50px 0;
-      line-height: 30px;
-      font-weight: 300;
-    }
-  }
   }
 </style>

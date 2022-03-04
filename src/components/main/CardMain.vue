@@ -8,7 +8,7 @@
 
 <script>
 export default {
-  name: 'CardWelcome',
+  name: 'CardMain',
   props: {
     img: String,
     title: String,
@@ -19,9 +19,11 @@ export default {
 
 <style scoped lang="scss">
   .card-welcome{
+    width: 310px;
+    padding: 30px 0;
     h5{
       font-weight: 300;
-      font-size: 17px;
+      font-size: 15px;
     }
     p{
       line-height: 30px;

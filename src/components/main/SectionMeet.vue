@@ -1,13 +1,14 @@
 
 <template>
   <section class="meet-doctors">
-    <div class="container text-center pb-5">
-      <div class="content-section">
-        <img :src="require ('../../assets/images/icon-5.png')" alt="Icon">
-        <h2 class="text-uppercase">Meet our doctors</h2>
-        <div class="line"></div>
-        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem asccusantium dolermque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis er quasi architecto beatae</p>
-      </div>
+    <div class="container text-center">
+      <TitleSection 
+        description="Sed ut perspiciatis unde omnis iste natus error sit voluptatem asccusantium dolermque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis er quasi architecto beatae"
+        title="Meet our doctors"
+        urlImg="icon-5.png"
+        :line="true"
+        :img="true"
+      />
       <div class="doctors d-flex justify-content-around">
         <CardDoctor 
           v-for="(doctor,index) in doctors" :key="index"
@@ -26,6 +27,7 @@
 
 <script>
   import CardDoctor from "./CardDoctor.vue"
+  import TitleSection from './TitleSection.vue'
   export default {
     name: 'SectionMeet',
     data(){
@@ -91,39 +93,19 @@
     props: {
     },
     components:{
-      CardDoctor
+      CardDoctor,
+      TitleSection
     }
   }
 </script>
 
 <style scoped lang="scss">
-  @import "../../assets/style/line.scss";
   .meet-doctors{
     background-color: #f1efef;
     .container{
       width: 70%;
       margin: auto;
-      .content-section{
-      width: 55%;
-      margin: auto;
-        h2{
-        font-size: 40px;
-        font-weight: 200;
-          &:after{
-            content: "";
-            width: 100px;
-            height: 5px;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background-color: black;
-          }
-        }
-        p{
-          line-height: 30px;
-          margin-bottom: 50px;
-        }
-      }
+      padding-bottom: 100px;
     }
   }
 </style>
