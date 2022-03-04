@@ -4,6 +4,7 @@
     <SectionMeet />
     <SectionHealth />
     <SectionTour />
+    <SectionMore />
   </main>
 </template>
 
@@ -12,6 +13,7 @@
   import SectionMeet from "./main/SectionMeet.vue"
   import SectionHealth from "./main/SectionHealth.vue"
   import SectionTour from "./main/SectionTour.vue"
+  import SectionMore from "./main/SectionMore.vue"
 
 
   
@@ -23,7 +25,8 @@
       SectionWelcome,
       SectionMeet,
       SectionHealth,
-      SectionTour
+      SectionTour,
+      SectionMore
     }
   }
 </script>

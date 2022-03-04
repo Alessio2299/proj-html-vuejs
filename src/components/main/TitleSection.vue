@@ -1,8 +1,9 @@
 <template>
   <div class="content-section">
     <img v-if="img" :src="require (`../../assets/images/${urlImg}`)" alt="Icon">
-    <h2 class="text-uppercase">{{title}}</h2>
-    <div v-if="line" class="line"></div>
+    <h2 :style="(sizeTitle) ? `fontSize: ${sizeTitle}px` : ''" class="text-uppercase">{{title}}</h2>
+    <div v-if="line && !lineImg" class="line"></div>
+    <img v-if="line && lineImg" :src="require ('../../assets/images/wave-divider.png')" alt="wave divider">
     <p>{{description}}</p>
   </div>
 </template>
@@ -15,7 +16,9 @@
       urlImg: String,
       title: String,
       description: String,
-      line: Boolean
+      line: Boolean,
+      lineImg: Boolean,
+      sizeTitle: Number
     }
   }
 </script>
@@ -27,7 +30,6 @@
     margin: auto;
     padding-top: 50px;
     h2{
-    font-size: 40px;
     font-weight: 200;
     }
     p{
@@ -35,5 +37,4 @@
       margin-bottom: 30px;
     }
   }
-
 </style>
