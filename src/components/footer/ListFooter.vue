@@ -9,7 +9,7 @@
 
 <script>
 export default {
-  name: 'FooterContact',
+  name: 'ListFooter',
   props:{
     icon: String,
     text: String
