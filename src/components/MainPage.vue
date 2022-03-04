@@ -5,6 +5,7 @@
     <SectionHealth />
     <SectionTour />
     <SectionMore />
+    <SectionAppointment />
   </main>
 </template>
 
@@ -14,9 +15,9 @@
   import SectionHealth from "./main/SectionHealth.vue"
   import SectionTour from "./main/SectionTour.vue"
   import SectionMore from "./main/SectionMore.vue"
+  import SectionAppointment from "./main/SectionAppointment.vue"
 
 
-  
   export default {
     name: 'MainPage',
     props: {
@@ -26,7 +27,8 @@
       SectionMeet,
       SectionHealth,
       SectionTour,
-      SectionMore
+      SectionMore,
+      SectionAppointment
     }
   }
 </script>

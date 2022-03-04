@@ -8,7 +8,7 @@
         :href="info.url">{{info.name}}
       </a>
     </li>
-    <li><a class="my_button bg-info rounded text-decoration-none text-white" href="#">Make Appointment</a></li>
+    <li><a class="my_button bg-info rounded text-decoration-none text-white" href="#appointment">Make Appointment</a></li>
    </ul>
  </nav>
 </template>
