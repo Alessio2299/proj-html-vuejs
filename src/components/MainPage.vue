@@ -6,6 +6,7 @@
     <SectionTour />
     <SectionMore />
     <SectionAppointment />
+    <SectionSponsor />
   </main>
 </template>
 
@@ -16,6 +17,8 @@
   import SectionTour from "./main/SectionTour.vue"
   import SectionMore from "./main/SectionMore.vue"
   import SectionAppointment from "./main/SectionAppointment.vue"
+  import SectionSponsor from "./main/SectionSponsor.vue"
+
 
 
   export default {
@@ -28,7 +31,8 @@
       SectionHealth,
       SectionTour,
       SectionMore,
-      SectionAppointment
+      SectionAppointment,
+      SectionSponsor
     }
   }
 </script>
