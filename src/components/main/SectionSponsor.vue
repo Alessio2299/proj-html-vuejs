@@ -1,9 +1,9 @@
 
 <template>
   <section class="sponsor pt-5">
-    <div class="content m-auto d-flex justify-content-between">
-      <div class="container-img" v-for="(image,index) in images.slice(start,last)" :key="index">
-        <img :src="require (`../../assets/images/${image.url}`)"  alt="Client Logos">
+    <div class="content m-auto">
+      <div class="container-img">
+        <img v-for="(image,index) in images" :key="index" :src="require (`../../assets/images/${image.url}`)"  alt="Client Logos">
       </div>
     </div>
   </section>
@@ -15,8 +15,6 @@
     name: 'SectionSponsor',
     data(){
       return{
-        start: 0,
-        last: 3,
         intervalid: "",
         images:[
           {
@@ -47,21 +45,9 @@
       }
     },
     mounted(){
-      this.sliders()
+
     },
     methods: {
-      sliders: function(){          
-            this.intervalid = setInterval(() => {
-              this.start++
-              this.last++
-              if(this.last == this.images.length){
-                this.last = 3
-              }
-              if(this.start == 5){
-                this.start = 0
-              }
-            }, 2000);
-        }
     }
   }
 </script>
@@ -74,8 +60,19 @@
       width: 50%;
       height: 200px;
       .container-img{
+        display: flex;
+        overflow: hidden;
         img{
-          width: 100%;
+          width: calc(100% / 3);
+          animation: scroll 15s linear infinite;
+          @keyframes scroll {
+          0%{
+            transform: translateX(0);
+          }
+          100%{
+            transform: translateX(-240px * 5);
+          }
+        }
         }
       }
     }
