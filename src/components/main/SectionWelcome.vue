@@ -1,6 +1,6 @@
 <template>
-  <section class="welcome text-center mb-5">
-    <div class="container">
+  <Intersect @enter="inters(true)">
+    <div :class="{'activeInters' : active}" class="section-welcome container text-center mb-5">
       <TitleSection
         :img="false"
         title="Welcome to Avada Health"
@@ -15,16 +15,19 @@
         />
       </div>
     </div>
-  </section>
+  </Intersect>
 </template>
 
 <script>
   import CardMain from "./CardMain.vue"
   import TitleSection from "./TitleSection.vue"
+  import Intersect from 'vue-intersect'
+
   export default {
     name: 'SectionWelcome',
     data(){
       return{
+        active: false,
         dataWelcome:[
           {
             img: "icon-1.png",
@@ -53,7 +56,13 @@
     },
     components:{
       CardMain,
-      TitleSection
+      TitleSection,
+      Intersect
+    },
+    methods:{
+      inters(enter){
+        this.active = enter
+      }
     }
   }
 </script>
@@ -62,5 +71,13 @@
   .container{
     width: 70%;
     margin: auto;
+    transition: all 2s;
+    transform: scale(0);
+    opacity: 0;
+    overflow: hidden;
+  }
+  .activeInters{
+    transform: scale(1);
+    opacity: 1;
   }
 </style>

@@ -1,7 +1,8 @@
 
 <template>
   <section id="appointment" :style="bgSection">
-    <div class="content text-white text-center py-5">
+    <Intersect @enter="inters(true)">
+      <div :class="{'activeInters' : active}" class="content text-white text-center py-5">
         <TitleSection
           :img="false"
           title="Make an appointment"
@@ -9,18 +10,22 @@
           :line="true"
         />
         <FormSection />
-    </div>
+      </div>
+    </Intersect>
   </section>
 </template>
 
 <script>
   import TitleSection from './TitleSection.vue'
   import FormSection from './FormSection.vue'
+  import Intersect from 'vue-intersect'
+
 
   export default {
     name: 'SectionAppointment',
     data(){
       return{
+        active: false,
         bgSection:{
           backgroundImage: `url(${require('../../assets/images/make-an-appointment.jpg')})`
         }
@@ -30,7 +35,13 @@
     },
     components:{
       TitleSection,
-      FormSection
+      FormSection,
+      Intersect
+    },
+    methods:{
+      inters(enter){
+        this.active = enter
+      }
     }
   }
 </script>
@@ -39,13 +50,21 @@
   #appointment{ 
     background-position: center;
     background-size: cover;
+    overflow: hidden;
     .content{
       font-weight: 300;
       width: 40%;
       margin: auto;
+      transition: all 3s;
+      opacity: 0;
+      transform: translateY(-660px);
       .content-section{
         width: 100%;
       }
+    }
+    .activeInters{
+      opacity: 1;
+      transform: translateY(0);
     }
   }
 </style>

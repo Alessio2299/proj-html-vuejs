@@ -1,7 +1,7 @@
 
 <template>
-  <section class="health-services">
-    <div class="container text-center">
+  <Intersect @enter="inters(true)">
+    <div :class="{'activeInters' : active}" class="health-services container text-center">
       <TitleSection
         :img="true"
         urlImg="icon-6.png"
@@ -17,17 +17,19 @@
         />
       </div>
     </div>
-  </section>
+  </Intersect>
 </template>
 
 <script>
   import TitleSection from './TitleSection.vue'
   import CardMain from "./CardMain.vue"
+  import Intersect from 'vue-intersect'
 
   export default {
     name: 'SectionHealth',
     data(){
       return{
+        active: false,
         services:[
           {
             img: "icon-14.png",
@@ -66,13 +68,31 @@
     },
     components:{
       TitleSection,
-      CardMain
+      CardMain,
+      Intersect
+    },
+    methods:{
+      inters(enter){
+        this.active = enter
+      }
     }
   }
 </script>
 
 <style scoped lang="scss">
-  .container-cards{
+  .container{
+    transition: all 2s;
+    transform: translateX(-1200px);
+    opacity: 0;
+    overflow-x: hidden;
+    width: 100%;
+    .container-cards{
     width: 78%;
+    }
   }
+  .activeInters{
+    transform: translateX(0px);
+    opacity: 1;
+  }
+
 </style>

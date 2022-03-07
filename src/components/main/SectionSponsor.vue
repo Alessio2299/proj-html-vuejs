@@ -56,6 +56,7 @@
   .sponsor{
     height: 300px ;
     background: linear-gradient(93deg, rgb(74, 183, 196) 20%, rgb(49, 154, 192) 50%, rgba(59,118,175,1) 70%);
+    overflow: hidden;
     .content{
       width: 50%;
       height: 200px;
