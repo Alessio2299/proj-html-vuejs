@@ -71,6 +71,8 @@
       text-align: center;
       &:hover{
         cursor: pointer;
+        background-color: #000;
+        color: #fff;
       }
     }
   }

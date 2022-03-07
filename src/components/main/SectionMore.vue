@@ -70,6 +70,10 @@
       padding: 8px 30px;
       border: 2px solid #fff;
       text-transform: uppercase;
+      &:hover{
+        background-color: #fff;
+        color: #000;
+      }
     }
     .content-section{
       width: 95%;

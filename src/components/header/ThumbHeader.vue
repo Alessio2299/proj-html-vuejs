@@ -1,12 +1,12 @@
 <template>
- <div class="thumb position-relative" :style="bgThumb">
-   <NavBar />
-   <div class="content-thumb text-white">
-     <h1 class="mb-3">Caring <span class="text-info">For Life</span></h1>
-     <p>Kind words can be short and easy to speak, but their echoes ar truly endless. Avada Health focuses on you as if it was our own family.</p>
-     <div class="mt-3 text-uppercase my_button bg-info rounded d-inline-block">Learn More</div>
-   </div>
- </div>
+  <div id="header-thumb" class="thumb position-relative" :style="bgThumb">
+    <NavBar />
+    <div class="content-thumb text-white">
+      <h1 class="mb-3">Caring <span class="text-info">For Life</span></h1>
+      <p>Kind words can be short and easy to speak, but their echoes ar truly endless. Avada Health focuses on you as if it was our own family.</p>
+      <div class="mt-3 text-uppercase my_button bg-info rounded d-inline-block">Learn More</div>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -47,6 +47,9 @@
       }
       .my_button{
       padding: 12px 35px;
+        &:hover{
+          background-color: rgb(77, 138, 150) !important;
+        }
       }
     }
   }

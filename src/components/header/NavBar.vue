@@ -52,6 +52,9 @@ export default {
     width: 95%;
     .my_button{
       padding: 12px 30px;
+      &:hover{
+        background-color: rgb(77, 138, 150) !important;
+      }
     }
   }
 </style>

@@ -5,7 +5,9 @@
       <span class="d-block text-uppercase mt-3">{{name}}</span>
       <span class="d-block my-2">{{job}}</span>
       <p class="mt-4">{{description}}</p>
-      <a :href="firstSocial.idSocial"><i :class="`${firstSocial.nameSocial} fab fa-${firstSocial.nameSocial}-square`"></i></a>
+      <a :href="firstSocial.idSocial">
+        <i :class="`${firstSocial.nameSocial} fab fa-${firstSocial.nameSocial}-square`"></i>
+      </a>
       <a :href="secondSocial.idSocial"><i :class="`${secondSocial.nameSocial} fab fa-${secondSocial.nameSocial}-square`"></i></a>
       <a :href="thirdSocial.idSocial"><i :class="`${thirdSocial.nameSocial} fab fa-${thirdSocial.nameSocial}-square`"></i></a>
     </div>

@@ -64,15 +64,18 @@
         overflow: hidden;
         img{
           width: calc(100% / 3);
-          animation: scroll 15s linear infinite;
+          animation: scroll 25s linear infinite;
           @keyframes scroll {
-          0%{
-            transform: translateX(0);
+            0%{
+              transform: translateX(0);
+            }
+            50%{
+              transform: translateX(-240px * 5);
+            }
+            100%{
+              transform: translateX(0);
+            }
           }
-          100%{
-            transform: translateX(-240px * 5);
-          }
-        }
         }
       }
     }

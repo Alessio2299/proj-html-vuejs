@@ -53,7 +53,8 @@
     text-transform: uppercase;
     background-color: rgb(94, 173, 188);
     &:hover{
-      cursor: pointer ;
+      cursor: pointer;
+      background-color: rgb(77, 138, 150);
     }
   }
 </style>
